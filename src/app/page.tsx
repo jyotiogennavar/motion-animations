@@ -7,8 +7,9 @@
 // import { Box } from "@/components/Layout";
 // import { Tabs } from "@/components/Tabs";
 // import TabsList from "@/components/TabsList";
- import MultiStepCards from "@/components/MultiStepCards";
+// import MultiStepCards from "@/components/MultiStepCards";
 // import FeedbackPopover from "@/components/FeedbackPopover";
+import { TrashAnimation } from "@/components/TrashAnimation";
   
 export default function Home() {
   return (
@@ -20,7 +21,8 @@ export default function Home() {
       {/* <Tabs /> */}
       {/* <TabsList /> */}
       {/* <FeedbackPopover /> */}
-      <MultiStepCards />
+      {/* <MultiStepCards /> */}
+      <TrashAnimation />
     </div>
   );
 }
