@@ -53,8 +53,8 @@ export default function TabsList() {
               layoutId={`game-${activeGame.title}`}
               ref={ref}
               className="flex flex-col gap-4 w-[500px] bg-white rounded-lg p-4 cursor-pointer"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              // initial={{ opacity: 0, scale: 0.9 }}
+              // animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
             >
               <div className="flex items-center gap-4 w-full">

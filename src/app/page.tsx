@@ -6,7 +6,10 @@
 // import {LinkShareButton } from "@/components/AnimateButton";
 // import { Box } from "@/components/Layout";
 // import { Tabs } from "@/components/Tabs";
-import TabsList from "@/components/TabsList";
+// import TabsList from "@/components/TabsList";
+import MultistepCards from "@/components/MultistepCards";
+// import FeedbackPopover from "@/components/FeedbackPopover";
+  
 export default function Home() {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center">
@@ -15,7 +18,9 @@ export default function Home() {
       {/* <FormCard /> */}
       {/* <Box /> */}
       {/* <Tabs /> */}
-      <TabsList />
+      {/* <TabsList /> */}
+      {/* <FeedbackPopover /> */}
+      <MultistepCards />
     </div>
   );
 }
