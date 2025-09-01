@@ -1,10 +1,14 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, MotionConfig } from "framer-motion";
+import useMeasure from "react-use-measure";
 
-export default function MultistepCards() {
+export default function MultiStepCards() {
   const [currentStep, setCurrentStep] = useState(0);
+  const [direction, setDirection] = useState<-1 | 1>(1);
+  const [ref, bounds] = useMeasure();
+
 
   const content = useMemo(() => {
     switch (currentStep) {
@@ -62,26 +66,31 @@ export default function MultistepCards() {
   }, [currentStep]);
 
   return (
-    <div className="relative mx-auto my-24 w-[550px] overflow-hidden rounded-xl shadow-md border border-gray-200">
-      <div className="p-6">
-        <AnimatePresence mode="popLayout" initial={false}>
+// use custom transition for the motion.div and use the direction state to set the direction of the transition
+
+    <MotionConfig transition={{ duration: 0.5, type: "spring", bounce: 0 }}>
+    <motion.div animate={{ height: bounds.height }}  className="relative mx-auto my-24 w-[550px] overflow-hidden rounded-xl shadow-md border border-gray-200">
+      <div className="p-6" ref={ref}> 
+        <AnimatePresence mode="popLayout" initial={false} custom={direction}>
           <motion.div
             key={currentStep}
-            initial={{ x: "110%", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: "-110%", opacity: 0 }}
-            transition={{ duration: 0.5, type: "spring", bounce: 0 }}
+            variants={variants}
+            initial="initial"
+            animate="active"
+            exit="exit"
+            custom={direction}
           >
             {content}
           </motion.div>
         </AnimatePresence>
 
-        <div className="mt-8 flex justify-between">
+        <motion.div layout className="mt-8 flex justify-between">
           <button
             className="h-8 w-20 rounded-full text-sm font-medium text-gray-600 shadow-sm border border-gray-300 hover:text-black disabled:cursor-not-allowed disabled:opacity-50"
             disabled={currentStep === 0}
             onClick={() => {
               if (currentStep > 0) {
+                setDirection(-1);
                 setCurrentStep((prev) => prev - 1);
               }
             }}
@@ -94,15 +103,28 @@ export default function MultistepCards() {
             onClick={() => {
               if (currentStep === 2) {
                 setCurrentStep(0);
+                setDirection(-1);
                 return;
               }
+              setDirection(1);
               setCurrentStep((prev) => prev + 1);
             }}
           >
             Continue
           </button>
+        </motion.div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </MotionConfig>
   );
 }
+
+const variants = {
+  initial: (direction: -1 | 1) => {
+    return { x: `${110 * direction}%`, opacity: 0 };
+  },
+  active: { x: "0%", opacity: 1 },
+  exit: (direction: -1 | 1) => {
+    return { x: `${-110 * direction}%`, opacity: 0 };
+  },
+};

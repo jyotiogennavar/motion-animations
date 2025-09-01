@@ -7,7 +7,7 @@
 // import { Box } from "@/components/Layout";
 // import { Tabs } from "@/components/Tabs";
 // import TabsList from "@/components/TabsList";
-import MultistepCards from "@/components/MultistepCards";
+ import MultiStepCards from "@/components/MultiStepCards";
 // import FeedbackPopover from "@/components/FeedbackPopover";
   
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       {/* <Tabs /> */}
       {/* <TabsList /> */}
       {/* <FeedbackPopover /> */}
-      <MultistepCards />
+      <MultiStepCards />
     </div>
   );
 }
