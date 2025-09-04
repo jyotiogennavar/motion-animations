@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Navigation() {
   return (
     // Root wrapper for navigation menu
-    <NavigationMenu.Root className="relative flex justify-center w-full z-50">
+    <NavigationMenu.Root className="relative flex  justify-center w-full z-50">
       {/* Navigation Menu List */}
       <NavigationMenu.List className="flex justify-center bg-white p-1 rounded-lg list-none m-0">
         {/* === Menu Item: Interviews === */}
@@ -109,11 +109,40 @@ export default function Navigation() {
             Account
           </NavigationMenu.Trigger>
         </NavigationMenu.Item>
+
+        <NavigationMenu.Item>
+          <NavigationMenu.Trigger className="px-3 py-2 font-medium text-sm rounded-md cursor-pointer hover:bg-gray-100 transition">
+            My List
+          </NavigationMenu.Trigger>
+          <NavigationMenu.Content className="content absolute top-0 left-0">
+            <ul className="grid p-6 gap-3 w-[564px] grid-flow-col grid-rows-3 list-none">
+              <ListItem title="Theory" href="/lessons">
+                Consists of 4 modules, 24 lessons and 50+ exercises.
+              </ListItem>
+              <ListItem title="Interviews" href="/lessons">
+                Interviews with experts from companies like Vercel.
+              </ListItem>
+              <ListItem title="Discord" href="/lessons">
+                Join an exclusive community on all things animation.
+              </ListItem>
+              <ListItem title="Walkthroughs" href="/lessons">
+                Consists of 3 walkthroughs of high-quality components.
+              </ListItem>
+              <ListItem title="Vault" href="/lessons">
+                A highly curated list of animation resources.
+              </ListItem>
+              <ListItem title="Certificate" href="/lessons">
+                Get your certificate of completion after finishing 70% of the
+                course.
+              </ListItem>
+            </ul>
+          </NavigationMenu.Content>
+        </NavigationMenu.Item>
       </NavigationMenu.List>
 
       {/* Viewport for showing content */}
       <div className="absolute flex justify-center w-full top-full left-0">
-        <NavigationMenu.Viewport className="viewport relative mt-2 bg-white rounded-md shadow-md overflow-hidden transition-all duration-250 ease w-[var(--radix-navigation-menu-viewport-width)] h-[var(--radix-navigation-menu-viewport-height)]" />
+        <NavigationMenu.Viewport className=" viewport relative mt-2 bg-white rounded-md shadow-md overflow-hidden duration-250 ease-in-out w-[var(--radix-navigation-menu-viewport-width)] h-[var(--radix-navigation-menu-viewport-height)]  transition-[width,height]" />
       </div>
     </NavigationMenu.Root>
   );
@@ -143,3 +172,5 @@ function ListItem({
     </li>
   );
 }
+
+// transition-all duration-250 ease w-[var(--radix-navigation-menu-viewport-width)] h-[var(--radix-navigation-menu-viewport-height)]

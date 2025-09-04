@@ -146,6 +146,10 @@
   }
 
   @keyframes scaleOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
     to {
       opacity: 0;
       transform: scale(0.98);
@@ -220,6 +224,8 @@
   .content[data-motion="to-end"] {
     animation-name: exitToRight;
   }
+
+  
 
   /* Accessibility: Disable transforms for users who prefer reduced motion */
   @media (prefers-reduced-motion: reduce) {
