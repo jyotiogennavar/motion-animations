@@ -10,7 +10,9 @@
 // import MultiStepCards from "@/components/MultiStepCards";
 // import FeedbackPopover from "@/components/FeedbackPopover";
 // import { TrashAnimation } from "@/components/TrashAnimation";
-import Orchestration from "@/components/navigation/navigation";
+// import Orchestration from "@/components/navigation/navigation";
+// import { CustomCursor } from "@/components/CustomCursor";
+import { DeliveryButton } from "@/components/carbutton";
   
 export default function Home() {
   return (
@@ -25,7 +27,9 @@ export default function Home() {
       {/* <MultiStepCards /> */}
       {/* <TrashAnimation /> */}
       {/* <Navigation /> */}
-      <Orchestration />
+      {/* <Orchestration /> */}
+      {/* <CustomCursor /> */}
+      <DeliveryButton />
     </div>
   );
 }
