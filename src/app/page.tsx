@@ -12,7 +12,8 @@
 // import { TrashAnimation } from "@/components/TrashAnimation";
 // import Orchestration from "@/components/navigation/navigation";
 // import { CustomCursor } from "@/components/CustomCursor";
-import { DeliveryButton } from "@/components/carbutton";
+//import { DeliveryButton } from "@/components/carbutton";
+import { ButtonToCard } from "@/components/apple-animations/button-to-card";
   
 export default function Home() {
   return (
@@ -29,7 +30,8 @@ export default function Home() {
       {/* <Navigation /> */}
       {/* <Orchestration /> */}
       {/* <CustomCursor /> */}
-      <DeliveryButton />
+      {/* <DeliveryButton /> */}
+      <ButtonToCard />
     </div>
   );
 }

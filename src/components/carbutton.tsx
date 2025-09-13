@@ -23,6 +23,7 @@ const DeliveryButton = () => {
   };
 
   return (
+    <>
     <div className="flex items-center justify-center gap-2">
       <button
         className={`
@@ -35,11 +36,7 @@ const DeliveryButton = () => {
           overflow-hidden
           transition-colors duration-500
           relative
-          ${
-            buttonState === "success"
-              ? "bg-green-500"
-              : "bg-gradient-to-b from-[#1994ff] to-[#157cff]"
-          }
+          bg-gradient-to-b from-[#1994ff] to-[#157cff]
         `}
         disabled={buttonState !== "idle"}
         onClick={handleClick}
@@ -78,7 +75,7 @@ const DeliveryButton = () => {
                 initial={{ opacity: 0, x: -25 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 25 }}
-                transition={{ type: "spring", duration: 0.5, bounce: 0 }}
+                transition={{ type: "spring", duration: 0.3, bounce: 0 }}
               >
                 <Check size={16} className="text-white" /> Delivered!
               </motion.span>
@@ -87,7 +84,10 @@ const DeliveryButton = () => {
         </span>
       </button>
     </div>
+    </>
   );
 };
 
 export { DeliveryButton };
+
+//    ${ buttonState === "success" ? "bg-green-500" : "bg-gradient-to-b from-[#1994ff] to-[#157cff]"}
