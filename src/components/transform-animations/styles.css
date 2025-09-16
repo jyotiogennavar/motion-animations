@@ -1,0 +1,117 @@
+/* Orbit demo for box 2 */
+/* Container sets the visualization bounds and relative positioning */
+.orbits {
+  position: relative;
+  width: 220px;
+  height: 220px;
+}
+/* Dashed guide rings; non-equidistant via varying inset values */
+.orbits .orbit-ring {
+  position: absolute;
+  inset: 0;
+  border: 2px dashed #e0e1e4;
+  border-radius: 9999px;
+  opacity: 0.8;
+}
+.orbits .orbit-ring-2 {
+  inset: 26px;
+}
+.orbits .orbit-ring-3 {
+  inset: 64px;
+}
+.orbits .orbit-ring-4 {
+  inset: 96px;
+}
+
+/* Central sun */
+.orbits .sun {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 46px;
+  height: 46px;
+  background: #2b2b2e;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+}
+
+/* Invisible orbit tracks rotated to move planets around the center */
+.orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
+/* Longer duration for outer tracks for a sense of scale */
+.orbit-1 {
+  width: 92px;
+  height: 96px;
+  animation: spin-slow 10s linear infinite;
+}
+.orbit-2 {
+  width: 168px;
+  height: 148px;
+  animation: spin-slow 18s linear infinite;
+}
+.orbit-4 {
+  width: 224px;
+  height: 224px;
+  animation: spin-slow 34s linear infinite;
+}
+
+/* Planet starts at top of orbit; horizontally centered */
+.planet {
+  position: absolute;
+  border-radius: 9999px;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+/* Offset by half of planet size so it straddles ring center-line */
+.planet-sm {
+  width: 18px;
+  height: 18px;
+  filter: hue-rotate(10deg);
+  top: -10px;
+}
+.planet-md {
+  width: 28px;
+  height: 28px;
+  top: -15px;
+}
+.planet-lg {
+  width: 40px;
+  height: 40px;
+  top: -20px;
+}
+
+/* Rotate orbits around center; transform-based for performance */
+@keyframes spin-slow {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Respect reduced motion preferences by disabling animation */
+@media (prefers-reduced-motion: reduce) {
+  .orbit {
+    animation: none;
+  }
+}
+
+/* box 3 - card stack */
+.card {
+  width: 56px;
+  height: 74px;
+  box-shadow: 0 4px 12px #0000001a;
+  border: 1px solid #eeeeee;
+  background: white;
+  border-radius: 8px;
+  grid-area: 1 / 1;
+
+  --scale-increment: 0.05;
+  --translate-increment: -13%;
+  transform: scale(calc(1 - var(--index) * var(--scale-increment)))
+    translateY(calc(var(--index) * var(--translate-increment)));
+}

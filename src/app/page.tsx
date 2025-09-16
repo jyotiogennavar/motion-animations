@@ -13,11 +13,12 @@
 // import Orchestration from "@/components/navigation/navigation";
 // import { CustomCursor } from "@/components/CustomCursor";
 //import { DeliveryButton } from "@/components/carbutton";
-import { ButtonToCard } from "@/components/apple-animations/button-to-card";
+// import { ButtonToCard } from "@/components/apple-animations/button-to-card";
+import { TransformAnimations } from "@/components/transform-animations";
   
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center">
+    <div className="min-h-screen bg-background ">
       {/* <EditCard /> */}
       {/* <AnimateIcon /> */}
       {/* <FormCard /> */}
@@ -31,7 +32,10 @@ export default function Home() {
       {/* <Orchestration /> */}
       {/* <CustomCursor /> */}
       {/* <DeliveryButton /> */}
-      <ButtonToCard />
+      {/* <ButtonToCard /> */}
+      <TransformAnimations />
     </div>
   );
 }
+
+// flex items-center justify-center
