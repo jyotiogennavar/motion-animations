@@ -155,7 +155,7 @@ const GAMES = [
     longDescription:
       "Throughout their journey, players will encounter diverse alien races, each with their own unique cultures and technologies. Engage in thrilling space combat, negotiate complex diplomatic relations, and make critical decisions that affect the balance of power in the galaxy.",
     image:
-      "https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/how-i-code-animations/space.png",
+      "https://images.unsplash.com/photo-1446776811953-b23d57bd21b2?w=112&h=112&fit=crop",
   },
   {
     title: "Angry Rabbits",
@@ -163,7 +163,7 @@ const GAMES = [
     longDescription:
       "The rabbits are angry and they are coming for you. You have to defend yourself with your carrot gun. The game is not simple, you have to be fast and accurate to survive.",
     image:
-      "https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/how-i-code-animations/rabbit.png",
+      "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=112&h=112&fit=crop",
   },
   {
     title: "Ghost town",
@@ -171,7 +171,7 @@ const GAMES = [
     longDescription:
       "You are in a ghost town and you have to find the ghosts. But be careful, they are dangerous.",
     image:
-      "https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/how-i-code-animations/ghost.webp",
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=112&h=112&fit=crop",
   },
   {
     title: "Pirates in the jungle",
@@ -179,7 +179,7 @@ const GAMES = [
     longDescription:
       "You are a pirate and you have to find the treasure in the jungle. But be careful, there are traps and wild animals.",
     image:
-      "https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/how-i-code-animations/pirate.png",
+      "https://images.unsplash.com/photo-1539650116574-9e7c7c2e15c7?w=112&h=112&fit=crop",
   },
 
   {
@@ -188,6 +188,6 @@ const GAMES = [
     longDescription:
       "You are lost in the mountains and you have to find your way home. But be careful, there are dangerous animals and you can get lost.",
     image:
-      "https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/how-i-code-animations/boy.webp",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=112&h=112&fit=crop",
   },
 ];

@@ -12,13 +12,15 @@
 // import { TrashAnimation } from "@/components/TrashAnimation";
 // import Orchestration from "@/components/navigation/navigation";
 // import { CustomCursor } from "@/components/CustomCursor";
-//import { DeliveryButton } from "@/components/carbutton";
-// import { ButtonToCard } from "@/components/apple-animations/button-to-card";
-import { TransformAnimations } from "@/components/transform-animations";
+// import { DeliveryButton } from "@/components/carbutton";
+//import { ButtonToCard } from "@/components/apple-animations/button-to-card";
+// import FeedbackCard from "@/components/feedbackCard";
+// import { TransformAnimations } from "@/components/transform-animations";
+ import SVG from "@/components/svg";
   
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background ">
+    <div className="min-h-screen bg-background flex justify-center items-center ">
       {/* <EditCard /> */}
       {/* <AnimateIcon /> */}
       {/* <FormCard /> */}
@@ -28,14 +30,15 @@ export default function Home() {
       {/* <FeedbackPopover /> */}
       {/* <MultiStepCards /> */}
       {/* <TrashAnimation /> */}
+      <SVG />
       {/* <Navigation /> */}
       {/* <Orchestration /> */}
       {/* <CustomCursor /> */}
       {/* <DeliveryButton /> */}
       {/* <ButtonToCard /> */}
-      <TransformAnimations />
+      {/* <FeedbackCard /> */}  
+      {/* <TransformAnimations /> */}
+      {/* <LinkShareButton /> */}
     </div>
   );
 }
-
-// flex items-center justify-center

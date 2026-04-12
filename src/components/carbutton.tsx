@@ -24,7 +24,7 @@ const DeliveryButton = () => {
 
   return (
     <>
-    <div className="flex items-center justify-center gap-2">
+    <div className=" flex items-center justify-center">
       <button
         className={`
           flex items-center justify-center
@@ -62,7 +62,7 @@ const DeliveryButton = () => {
                 initial={{ x: "-100%" }}
                 animate={{ x: "800%" }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 1.5, ease: "linear" }}
+                transition={{ duration: 1.0, ease: "linear" }}
               >
                 <Image src="/reshot-icon-car-deliver.svg" alt="Delivery vehicle" width={24} height={24} className="h-6 w-6" />
               </motion.div>

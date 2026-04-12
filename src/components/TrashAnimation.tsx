@@ -5,7 +5,12 @@ import { useEffect, useState } from "react";
 import { TrashBack, TrashFront } from "./trash-assets";
 import clsx from "clsx";
 
-const IMAGES = ["japan", "jungle", "new-york", "desert"];
+const IMAGES = [
+  { id: "japan", url: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=200&h=200&fit=crop" },
+  { id: "jungle", url: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=200&h=200&fit=crop" },
+  { id: "new-york", url: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=200&h=200&fit=crop" },
+  { id: "desert", url: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=200&h=200&fit=crop" },
+];
 
 export function TrashAnimation() {
   const [imagesToRemove, setImagesToRemove] = useState<string[]>([]);
@@ -13,7 +18,7 @@ export function TrashAnimation() {
   const [removed, setRemoved] = useState(false);
 
   const imagesToShow = readyToRemove
-    ? IMAGES.filter((img) => !imagesToRemove.includes(img))
+    ? IMAGES.filter((img) => !imagesToRemove.includes(img.id))
     : IMAGES;
 
   useEffect(() => {
@@ -33,7 +38,7 @@ export function TrashAnimation() {
           <AnimatePresence>
             {!readyToRemove &&
               imagesToShow.map((image) => {
-                const isSelected = imagesToRemove.includes(image);
+                const isSelected = imagesToRemove.includes(image.id);
 
                 return (
                   <motion.li
@@ -48,7 +53,7 @@ export function TrashAnimation() {
                             },
                           }
                     }
-                    key={image}
+                    key={image.id}
                     className="relative flex h-[100px] w-[100px]"
                   >
                     <motion.div
@@ -82,18 +87,18 @@ export function TrashAnimation() {
                       onClick={() => {
                         if (isSelected) {
                           setImagesToRemove((images) =>
-                            images.filter((img) => img !== image)
+                            images.filter((img) => img !== image.id)
                           );
                         } else {
-                          setImagesToRemove((images) => [...images, image]);
+                          setImagesToRemove((images) => [...images, image.id]);
                         }
                       }}
                     >
                       <motion.img
-                        layoutId={`image-${image}`}
+                        layoutId={`image-${image.id}`}
                         className="rounded-xl"
-                        alt="A guy"
-                        src={`https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/why-framer-motion/${image}.webp`}
+                        alt="Stock photo"
+                        src={image.url}
                         height={100}
                         width={100}
                       />
@@ -223,13 +228,16 @@ export function TrashAnimation() {
                 transition={removed ? { duration: 0.3, type: "spring", bounce: 0 } : { delay: 0.13 }}
                 className="absolute top-[-60px] flex w-full flex-col-reverse items-center"
               >
-                {imagesToRemove.map((image, index) => (
-                  <li key={image} className="flex h-1 items-center gap-2">
+                {imagesToRemove.map((imageId, index) => {
+                  const image = IMAGES.find((img) => img.id === imageId);
+                  if (!image) return null;
+                  return (
+                  <li key={image.id} className="flex h-1 items-center gap-2">
                     <motion.img
-                      layoutId={`image-${image}`}
-                      alt="A guy"
+                      layoutId={`image-${image.id}`}
+                      alt="Stock photo"
                       className="rounded"
-                      src={`https://animations-on-the-web-git-how-i-use-3066e1-emilkowalski-s-team.vercel.app/how-i-use-framer-motion/why-framer-motion/${image}.webp`}
+                      src={image.url}
                       height={65}
                       width={65}
                       style={{
@@ -240,7 +248,8 @@ export function TrashAnimation() {
                       }}
                     />
                   </li>
-                ))}
+                );
+                })}
               </motion.div>
               <motion.div
                 initial={{ opacity: 0 }}
