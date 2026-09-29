@@ -1,6 +1,6 @@
 
 
-// import EditCard from "@/components/card";
+
 // import { FormCard } from "@/components/FormCard";
 // import AnimateIcon from "@/components/AnimateIcon";
 // import {LinkShareButton } from "@/components/AnimateButton";
@@ -16,12 +16,16 @@
 //import { ButtonToCard } from "@/components/apple-animations/button-to-card";
 // import FeedbackCard from "@/components/feedbackCard";
 // import { TransformAnimations } from "@/components/transform-animations";
- import SVG from "@/components/svg";
-  
+// import SVG from "@/components/svg";
+// import CursorInteraction from "@/components/CursorInteraction";
+// import SVGCupAnimation from "@/components/svgcupanimation";
+// import SVGLineAnimation from "@/components/svglineanimation";
+import CoffeeCup from "@/components/coffee-types/CoffeeCup";
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background flex justify-center items-center ">
-      {/* <EditCard /> */}
+    <div className="min-h-screen">
+     
       {/* <AnimateIcon /> */}
       {/* <FormCard /> */}
       {/* <Box /> */}
@@ -30,7 +34,7 @@ export default function Home() {
       {/* <FeedbackPopover /> */}
       {/* <MultiStepCards /> */}
       {/* <TrashAnimation /> */}
-      <SVG />
+      {/* <SVG /> */}
       {/* <Navigation /> */}
       {/* <Orchestration /> */}
       {/* <CustomCursor /> */}
@@ -39,6 +43,10 @@ export default function Home() {
       {/* <FeedbackCard /> */}  
       {/* <TransformAnimations /> */}
       {/* <LinkShareButton /> */}
+      {/* <CursorInteraction /> */}
+      {/* <SVGCupAnimation /> */}
+      {/* <SVGLineAnimation /> */}
+      <CoffeeCup />
     </div>
   );
 }

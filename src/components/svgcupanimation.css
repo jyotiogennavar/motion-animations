@@ -1,0 +1,17 @@
+.star-svg path {
+  stroke-dasharray: 0, 1000;
+  transition: stroke-dasharray 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .star-svg:hover path {
+    stroke-dasharray: 100, 1000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star-svg path {
+    stroke-dasharray: 100, 1000;
+    transition: none;
+  }
+}
