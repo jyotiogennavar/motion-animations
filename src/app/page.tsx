@@ -21,8 +21,9 @@
 // import SVGCupAnimation from "@/components/svgcupanimation";
 // import SVGLineAnimation from "@/components/svglineanimation";
 // import CoffeeCup from "@/components/coffee-types/CoffeeCup";
- import Eyes from "@/app/eyes";
+// import Eyes from "@/app/eyes";
 // import StarCursor from "@/components/star-cursor";
+import ClipPathImageReveal from "@/components/clippathimagereveal";
 
 export default function Home() {
   return (
@@ -49,7 +50,8 @@ export default function Home() {
       {/* <SVGCupAnimation /> */}
       {/* <SVGLineAnimation /> */}
       {/* <CoffeeCup /> */}
-      <Eyes />
+      {/* <Eyes /> */}
+      <ClipPathImageReveal />
       {/* <StarCursor /> */}
     </div>
   );
