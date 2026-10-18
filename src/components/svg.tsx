@@ -1,6 +1,3 @@
-import SparkLine from "@/components/SparkLine";
-
-
 const SVG_SIZE = 120;
 const VIEW_BOX = "0 0 200 200";
 const STROKE_PROPS = { stroke: "black", strokeWidth: 5, fill: "none" as const };
@@ -82,16 +79,10 @@ const SVGShapes = ()  => {
 
 
 const SVG = () => {
-  const DATA = [0, 5, 12, 11, 18, 5, 2, 13, 13, 19, 20, 10, 15, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20];
   return (
     <div className="flex flex-col items-center min-h-screen p-8">
       <h1 className="text-xl font-medium mb-8">SVG</h1>
       <SVGShapes />
-      <div className="mt-8 flex flex-col items-center">
-      <h2 className="text-lg font-medium mb-8">SparkLine</h2>
-      <SparkLine data={DATA} />
-      </div>
-    
     </div>
   );
 };
