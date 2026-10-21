@@ -1,0 +1,110 @@
+.scroll-trigger-words {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: hsl(210deg 15% 6%);
+  color: white;
+  color-scheme: dark;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255 255 255 / 0.45) transparent;
+}
+
+.scroll-trigger-words::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scroll-trigger-words::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-trigger-words::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+  background-color: rgb(255 255 255 / 0.45);
+}
+
+.scroll-trigger-words::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .scroll-trigger-words::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(255 255 255 / 0.7);
+  }
+}
+
+.scroll-trigger-words__page {
+  height: 214%;
+}
+
+.scroll-trigger-words__lead {
+  height: calc(100% * 110 / 214);
+}
+
+.scroll-trigger-words h1 {
+  margin: 0;
+  padding: 1.5rem 1.75rem 0;
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.scroll-trigger-words .word {
+  display: inline-block;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .scroll-trigger-words .word {
+    animation: fade-in linear both;
+    animation-duration: auto;
+    animation-timeline: view();
+    animation-range:
+      cover calc(20% + var(--i) * 5%)
+      cover calc(45% + var(--i) * 5%);
+    will-change: opacity;
+  }
+
+  @supports (left: calc(sibling-index() * 1px)) {
+    .scroll-trigger-words .word {
+      animation-range:
+        cover calc(20% + sibling-index() * 5%)
+        cover calc(45% + sibling-index() * 5%);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-trigger-words {
+    height: auto;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .scroll-trigger-words__page {
+    height: auto;
+  }
+
+  .scroll-trigger-words__lead {
+    display: none;
+  }
+
+  .scroll-trigger-words .word {
+    animation: none;
+    animation-timeline: auto;
+    opacity: 1;
+    will-change: auto;
+  }
+}

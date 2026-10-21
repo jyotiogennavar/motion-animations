@@ -25,8 +25,10 @@ import { LinkShareButton } from "@/components/AnimateButton";
 import AnimateIcon from "@/components/AnimateIcon";
 import { FormCard } from "@/components/FormCard";
 import GraphFollow from "@/components/graph-follow";
+import ScrollTriggerWords from "@/components/scroll-trigger-words";
+import ViewTimelineSquare from "@/components/view-timeline-square";
 
-const categories = ["Pointer", "Draw", "Buttons", "Menus", "Cards"] as const;
+const categories = ["Pointer", "Draw", "Buttons", "Menus", "Cards", "Scroll"] as const;
 
 type Category = (typeof categories)[number];
 type Filter = "All" | Category;
@@ -42,6 +44,18 @@ const animations: {
   category: Category;
   preview: ReactNode;
 }[] = [
+  {
+    name: "View timeline",
+    line: "Scroll the line and the square rounds as it passes.",
+    category: "Scroll",
+    preview: <ViewTimelineSquare />,
+  },
+  {
+    name: "Scroll trigger words",
+    line: "Scroll the frame and each word fades in, one after another.",
+    category: "Scroll",
+    preview: <ScrollTriggerWords />,
+  },
   {
     name: "Graph follow",
     line: "Move across the chart and the line draws out to the pointer.",
@@ -182,11 +196,13 @@ function countFor(filter: Filter) {
 }
 
 const stageClassName = [
-  "flex h-[32rem] w-full overflow-auto rounded-md border border-neutral-800 bg-white",
+  "custom-scroll flex h-[32rem] w-full overflow-auto rounded-md border border-neutral-800 bg-white",
   "[&>*]:m-auto [&>*]:max-w-full",
   "[&>.h-screen]:!m-0 [&>.h-screen]:!h-full [&>.h-screen]:!min-h-full [&>.h-screen]:!w-full [&>.h-screen]:!max-w-none [&>.h-screen]:!self-stretch",
   "[&>.min-h-screen]:!h-auto [&>.min-h-screen]:!min-h-0",
   "[&>.clip-path-image-reveal]:!m-0 [&>.clip-path-image-reveal]:!h-full [&>.clip-path-image-reveal]:!min-h-full [&>.clip-path-image-reveal]:!w-full [&>.clip-path-image-reveal]:!max-w-none [&>.clip-path-image-reveal]:!self-stretch",
+  "[&>.scroll-trigger-words]:!m-0 [&>.scroll-trigger-words]:!h-full [&>.scroll-trigger-words]:!min-h-0 [&>.scroll-trigger-words]:!w-full [&>.scroll-trigger-words]:!max-w-none [&>.scroll-trigger-words]:!self-stretch",
+  "[&>.view-timeline-square]:!m-0 [&>.view-timeline-square]:!h-full [&>.view-timeline-square]:!min-h-0 [&>.view-timeline-square]:!w-full [&>.view-timeline-square]:!max-w-none [&>.view-timeline-square]:!self-stretch",
   "[&>.coffee-cup]:!h-auto [&>.coffee-cup]:!min-h-0",
   "[&>.root]:!w-full [&>.root]:!max-w-full",
 ].join(" ");
