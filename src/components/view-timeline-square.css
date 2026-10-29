@@ -82,7 +82,7 @@
 
 @keyframes view-timeline-square-round {
   to {
-    border-radius: 20%;
+    border-radius: 50%;
   }
 }
 

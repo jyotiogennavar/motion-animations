@@ -27,6 +27,7 @@ import { FormCard } from "@/components/FormCard";
 import GraphFollow from "@/components/graph-follow";
 import ScrollTriggerWords from "@/components/scroll-trigger-words";
 import ViewTimelineSquare from "@/components/view-timeline-square";
+import ScrollHalf from "@/components/scroll-half";
 
 const categories = ["Pointer", "Draw", "Buttons", "Menus", "Cards", "Scroll"] as const;
 
@@ -44,6 +45,12 @@ const animations: {
   category: Category;
   preview: ReactNode;
 }[] = [
+  {
+    name: "Halfway fade",
+    line: "Scroll halfway down and the line fades in.",
+    category: "Scroll",
+    preview: <ScrollHalf />,
+  },
   {
     name: "View timeline",
     line: "Scroll the line and the square rounds as it passes.",
@@ -203,6 +210,7 @@ const stageClassName = [
   "[&>.clip-path-image-reveal]:!m-0 [&>.clip-path-image-reveal]:!h-full [&>.clip-path-image-reveal]:!min-h-full [&>.clip-path-image-reveal]:!w-full [&>.clip-path-image-reveal]:!max-w-none [&>.clip-path-image-reveal]:!self-stretch",
   "[&>.scroll-trigger-words]:!m-0 [&>.scroll-trigger-words]:!h-full [&>.scroll-trigger-words]:!min-h-0 [&>.scroll-trigger-words]:!w-full [&>.scroll-trigger-words]:!max-w-none [&>.scroll-trigger-words]:!self-stretch",
   "[&>.view-timeline-square]:!m-0 [&>.view-timeline-square]:!h-full [&>.view-timeline-square]:!min-h-0 [&>.view-timeline-square]:!w-full [&>.view-timeline-square]:!max-w-none [&>.view-timeline-square]:!self-stretch",
+  "[&>.scroll-half]:!m-0 [&>.scroll-half]:!h-full [&>.scroll-half]:!min-h-0 [&>.scroll-half]:!w-full [&>.scroll-half]:!max-w-none [&>.scroll-half]:!self-stretch",
   "[&>.coffee-cup]:!h-auto [&>.coffee-cup]:!min-h-0",
   "[&>.root]:!w-full [&>.root]:!max-w-full",
 ].join(" ");
